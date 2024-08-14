@@ -54,6 +54,7 @@ public class Scrabble {
         for (int i=0; i<charWord.length; ++i){
             if (charWord[i]=='!' || charWord[i]=='|'){
                 terminate=0;
+                break;
             }
             if(charWord[i]=='{'){
                 if(charWord[i+2]=='}'){
@@ -63,6 +64,7 @@ public class Scrabble {
                     if (multiWord==1) {
                         multi=0;
                         terminate=0;
+                        break;
                     }
 
 
@@ -79,6 +81,7 @@ public class Scrabble {
                     if (multiWord==1) {
                         multi=0;
                         terminate=0;
+                        break;
                     }
 
 
@@ -97,6 +100,7 @@ public class Scrabble {
                 else if (multi!=2){
                     if (multiWord==1) {
                         terminate = 0;
+                        break;
                     }
                 }
 
@@ -110,6 +114,7 @@ public class Scrabble {
                 else if (multi!=3){
                     if (multiWord==1) {
                         terminate = 0;
+                        break;
                     }
                 }
 
@@ -120,7 +125,7 @@ public class Scrabble {
                 for (char d : key.toCharArray()) {
                     if (charWord[i] == d) {
                         score += letterValues.get(key) * multi;
-                        continue;
+                        break;
 
                     }
                 }

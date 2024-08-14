@@ -31,20 +31,26 @@ public class Scrabble {
         int terminate=1;
         int multiWord=1;
 
-        if (charWord[0]=='{' & charWord[2]!='}'){
-            if (charWord[charWord.length-1]=='}'){
-                multiWord=2;
-            }
-            if (charWord[1]=='[' & charWord[charWord.length-2]==']'){
-                multiWord=6;
+        if (sWord.length()>3) {
+            if (charWord[0] == '{' & charWord[2] != '}') {
+                if (charWord[charWord.length - 1] == '}') {
+                    multiWord = 2;
+                }
+                if (charWord[1] == '[' & charWord[charWord.length - 2] == ']') {
+                    multiWord = 6;
+                }
+            } else if (charWord[0] == '[' & charWord[2] != ']') {
+                if (charWord[charWord.length - 1] == ']') {
+                    multiWord = 3;
+                }
+                if (charWord[1] == '{' & charWord[charWord.length - 2] == '}') {
+                    multiWord = 2;
+                }
             }
         }
 
-        if (charWord[0]=='[' & charWord[2]!=']'){
-            if (charWord[charWord.length-1]==']'){
-                multiWord=3;
-            }
-        }
+
+
         for (int i=0; i<charWord.length; ++i){
             if (charWord[i]=='!' || charWord[i]=='|'){
                 terminate=0;
